@@ -1,0 +1,149 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `himsa_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `himsa_db` ;
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`lvl_cap`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`lvl_cap` (
+  `lvl_no` INT NOT NULL ,
+  `cap` INT NULL ,
+  PRIMARY KEY (`lvl_no`) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`user`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`user` (
+  `user_id` INT NOT NULL AUTO_INCREMENT ,
+  `username` VARCHAR(45) NOT NULL ,
+  `password` VARCHAR(45) NOT NULL ,
+  `type` VARCHAR(45) NOT NULL COMMENT 'this could be Admin, instructor, trainee (basic access privileges)' ,
+  `xp` INT NULL DEFAULT 0 ,
+  `lvl_no` INT NOT NULL DEFAULT 1 ,
+  `stats` VARCHAR(45) NULL COMMENT 'this is for storing stats about the user such as: Strength, Stamina … etc' ,
+  PRIMARY KEY (`user_id`) ,
+  UNIQUE INDEX `username_UNIQUE` (`username` ASC) ,
+  INDEX `lvl_no_idx` (`lvl_no` ASC) ,
+  CONSTRAINT `lvl_no`
+    FOREIGN KEY (`lvl_no` )
+    REFERENCES `himsa_db`.`lvl_cap` (`lvl_no` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`badge`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`badge` (
+  `badge_id` INT NOT NULL AUTO_INCREMENT ,
+  `user_id` INT NOT NULL ,
+  `image` BLOB NOT NULL ,
+  PRIMARY KEY (`badge_id`) ,
+  INDEX `user_id_idx` (`user_id` ASC) ,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `himsa_db`.`user` (`user_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`team`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`team` (
+  `team_id` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  `image` BLOB NULL ,
+  `progress` INT NULL DEFAULT 0 COMMENT 'this is the cumulative points that each team has gathered.' ,
+  PRIMARY KEY (`team_id`) ,
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`task`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`task` (
+  `task_id` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NULL ,
+  `xp` INT NULL ,
+  `user_id` INT NULL ,
+  `complete` INT NULL DEFAULT 0 ,
+  `type` VARCHAR(45) NULL COMMENT 'team or individual' ,
+  `end_date` DATETIME NULL ,
+  `description` VARCHAR(45) NULL ,
+  `team_id` INT NULL ,
+  `difficulty` INT NULL COMMENT 'rating from 1 - 5 with 5 being most difficult' ,
+  PRIMARY KEY (`task_id`) ,
+  INDEX `user_id_idx` (`user_id` ASC) ,
+  INDEX `team_id_idx` (`team_id` ASC) ,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `himsa_db`.`user` (`user_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `team_id`
+    FOREIGN KEY (`team_id` )
+    REFERENCES `himsa_db`.`team` (`team_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`message`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`message` (
+  `message_id` INT NOT NULL AUTO_INCREMENT ,
+  `name` VARCHAR(45) NOT NULL ,
+  `message_type` VARCHAR(45) NULL ,
+  PRIMARY KEY (`message_id`) ,
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC) )
+ENGINE = InnoDB
+COMMENT = 'use order by rand() limit 1 and select a type ';
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`user_team`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`user_team` (
+  `user_team_id` INT NOT NULL AUTO_INCREMENT ,
+  `user_id` INT NOT NULL ,
+  `team_id` INT NOT NULL ,
+  `join_date` DATETIME NOT NULL COMMENT 'change default to current.' ,
+  PRIMARY KEY (`user_team_id`, `user_id`, `team_id`) ,
+  INDEX `user_id_idx` (`user_id` ASC) ,
+  INDEX `team_id_idx` (`team_id` ASC) ,
+  CONSTRAINT `user_id`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `himsa_db`.`user` (`user_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `team_id`
+    FOREIGN KEY (`team_id` )
+    REFERENCES `himsa_db`.`team` (`team_id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `himsa_db`.`settings`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `himsa_db`.`settings` (
+)
+ENGINE = InnoDB;
+
+USE `himsa_db` ;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

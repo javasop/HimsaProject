@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+*.sublime-project
+*.sublime-workspace
+test/projects/Harness
+test/projects/TiAppCopy

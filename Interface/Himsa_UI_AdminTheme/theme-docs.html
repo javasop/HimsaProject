@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Title: -->
+  <title>MADMIN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- Bootstrap Styles -->
+    <!-- Bootstrap 2.0.4 -->
+    <link rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css" />
+    <!-- Font Awesome 2.0 -->
+      <link rel="stylesheet" href="media/fonts/font-awesome/css/font-awesome.min.css" />
+      
+    <!-- /Font Awesome 2.0 -->
+    <!-- IcoMoon font pack -->
+      <link rel="stylesheet" href="media/fonts/icomoon-pack-madmin-1.5/style.css" />
+      
+    <!-- /IcoMoon font pack -->
+  <!-- /Bootstrap Styles -->
+
+  <!-- Theme Styles -->
+
+    <!-- Libs Styles -->
+
+    <!-- /Libs Styles -->
+
+    <!-- Core Theme Styles -->
+    <!-- <link rel="stylesheet/less" href="media/styles/style.less" /> -->
+    <link rel="stylesheet" href="media/styles/style.css" />
+    
+  <!-- /Theme Styles -->
+
+  <!-- CMS/Framework styles & scripts -->
+    <!-- ADD HERE -->
+  <!-- /CMS/Framework styles & scripts -->
+
+  <!-- Style tweaks to CMS/plugins/widgets -->
+    <!-- ADD HERE -->
+    <!-- eg.: <link href="media/css/tweaks.css" rel="stylesheet" /> -->
+  <!-- /Style tweaks to CMS/plugins/widgets -->
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements:
+       load latest from Google Code, fall back to local if offline -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script>window.html5 || document.write('<script src="media/js/libs/fixes/html5.js"><\/script>')</script>
+  <![endif]-->
+
+  <!-- Icons: place favicon.ico and apple-touch-icon.png in the root directory (more: mathiasbynens.be/notes/touch-icons) -->
+    <!--
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="media/bootstrap/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="media/bootstrap/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="media/bootstrap/ico/apple-touch-icon-57-precomposed.png" />
+    -->
+  <!-- /Icons -->
+
+  <!-- Fonts -->
+    <!-- ADD HERE -->
+  <!-- /Fonts -->
+
+  <!-- LESS -->
+  <!-- <script src="media/_tools/less-1.3.0.min.js"></script> -->
+</head>
+
+<body class="no-sidebar-page">
+
+<!--============================= Page Body =================================-->
+
+
+
+
+
+<!-- #topbar: Top Bar Menu -->
+<ul id="topbar" class="on-click">
+  <li class="pull-left">
+    <h1 id="topbar-title">
+      <i class="icon-cogs"></i>
+      <!-- <i class="icon-icomoon-grid-view"></i> -->
+      <!-- <span aria-hidden="true" class="icon-icomoon-grid-view"></span> -->
+      <a href="index.html">MADMIN Control Panel</a>
+    </h1>
+  </li>
+  <li>
+    <a href="theme-docs.html">
+      <i class="icon-book"></i>
+      <!-- <i class="icon-icomoon-grid-view"></i> -->
+      <!-- <span aria-hidden="true" class="icon-icomoon-grid-view"></span> -->
+      <span>Theme Docs</span>
+    </a>
+  </li>
+  <li class="parent pull-right">
+    <a href="#" data-toggle="dropdown">
+      <i class="icon-user"></i>
+      <span>John Adminsky</span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Finances</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Logout</a></li>
+    </ul>
+  </li>
+  <li class="parent pull-right">
+    <a href="#" data-toggle="dropdown">
+      <i class="icon-cog"></i>
+      <span>Settings</span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Backend Settings</a></li>
+      <li><a href="#">Frontend Settings</a></li>
+    </ul>
+  </li>
+  <li class="pull-right">
+    <a href="page-login.html">
+      <i class="icon-sign-blank"></i>
+      <span>Sign in</span>
+    </a>
+  </li>
+</ul>
+<!-- /#topbar: Top Bar Menu -->
+
+
+<div class="container-fluid" id="container">
+
+  <!-- #content.row-fluid: The Main Content Section
+
+    Just add the page content here for a regular page or use .page DIVs for panel pages.
+    Use Bootstrap fluid layout for best effect.
+
+  -->
+  <div class="row-fluid" id="content">
+
+    <div class="span2"></div>
+
+    <div class="span8">
+      
+      <div class="panel" id="panel-theme-docs">
+
+        <header>
+          <i class="icon-book"></i>
+          <span>MADMIN Theme Docs</span>
+        </header>
+
+        <div class="content">
+        
+          <h1>MADMIN Bootstrap Theme</h1>
+          <br />
+
+          <p>
+            The function of a great admin UI is to stand out of the way and to let you focus on your data and your controls. This is why we developed MADMIN as a clean, unobstrusive theme inspired by the Metro design philosophy of simplicity and flatness. And we've crafted it on top of the Bootstrap Framework because we know there simply is nothing better to use as solid a foundation for your design.
+          </p>
+
+          <hr/>
+          <h2>IMPROVEMENTS <small>in v 1.6</small></h2>
+          <ul>
+            <li>upgrade to <strong>Bootstrap 2.2.2</strong></li>
+            <li>upgrade to <strong>Font Awesome 3.0</strong></li>
+            <li>add default-Bootstrap styles for primary and info buttons via <code>.btn-primary-bs</code> and <code>.btn-info-bs</code> CSS classes</li>
+          </ul>
+
+          <hr/>
+          <h2>IMPROVEMENTS <small>in v 1.5</small></h2>
+          <ul>
+            <li>upgrade to <strong>Bootstrap 2.2.1</strong></li>
+            <li><strong>multi-level</strong> sidebar dropdown menus</li>
+            <li><strong>MADMIN styling</strong> for all Bootstrap elements (buttons, tabs, tables...)</li>
+            <li>
+              <strong>even more icons</strong> via the IcoMoon icon-font builder app<br/>
+              <em>check out <a href="media/fonts/icomoon-pack-madmin-1.5/index.html">the IcoMoon icon pack</a> and use them <a href="http://icomoon.io/#docs">as documented</a> or <br/>
+              with <code>&lt;i class=&quot;...&quot;&gt;&lt;/i&gt;</code>same as for <a href="http://fortawesome.github.com/Font-Awesome/#all-icons">Font Awesome icons</a>.</em>
+            </li>
+            <li><strong>fixes</strong> to browser compatibiility bugs</li>
+          </ul>
+          <hr/>
+
+          <h2>DOCS</h2>
+
+          <p>
+            There are just a few simple concepts that you need to grook to make the best use of this theme, so read on to understand them.
+          </p>
+
+          <h2>Page types</h2>
+          <p>
+            MADMIN gives you a choice of using either:
+            <ul>
+              <li><strong>regular pages</strong> or</li>
+              <li><strong>panel pages</strong></li>
+            </ul>
+          </p>
+          <p>
+            <strong>Regular pages</strong> are exactly what you would expect them to be, so there is no point in over-explaining things. This <em>Theme Docs</em> page, for example, and the <em>Login</em> page fall in this category.
+          </p>
+          <p>
+            <strong>Panel pages</strong> are <code>div</code>s with CSS class <code>page</code> that are contained in the main page page HTML and are brought in and out of view by means of Javascript. To add a link to a panel, just use an <code>a</code> element like this: <code>&lt;a href=&quot;#&quot; data-target-page=&quot;page-home&quot;&gt;</code>. The <code>data-target-page</code> attribute is simply the id of the <code>.panel</code> element that contains the panel page. All other demo pages besides the ones mentioned above are panel pages.
+          </p>
+          <p>
+            All <code>.page</code> pages should be children of the <code>#content</code> container and all but the one visible by default should have the class <code>.hidden</code>.
+          <p>
+            The great advantage of using panel pages is that you pevent page loading delays, making your UI more responsive, and you can have an "admin in one page" if you find this helpful. Or you can load content in them on-demand using AJAX, but you'll have to implement this functionality yourself. Regular pages on the other hand are appropriate if your pages are large and loading them all at once would not be such a good idea. They may also prevent some third party UI components from misbehaving.
+          </p>
+
+          <h3>The MADMIN side menu</h3>
+          <p>
+            This is one of the highlights of this theme. It is:
+            <ul>
+              <li><strong>minimizable</strong> &mdash; great for netbook screens</li>
+              <li><strong>fixed-responsive</strong> &mdash; it is fixed if the viewport size is appropriate for viewing its entire content, but stops being fixed if the viewport is too small, allowing regular scrolling</li>
+              <li>capable of <strong>on-click</strong> or <strong>on-hover</strong> behavior &mdash; you can change the behavior by simply changing the CSS class on it from <code>on-click</code> to <code>on-hover</code>. On click behavior is default and recommended nonetheless, since this is the only mode that is touch-screen friendly. The <code>on-hover</code> mode is by design simpler and stateless since it's supposed to work as a CSS only driven menu (it even functions with Javascript disabled).</li>
+            </ul>
+          </p>
+
+          <h3>Improvement's to Bootstrap's drop-downs</h3>
+          <p>
+            The topbar drop-down menus are simply stiled Bootstrap drop-downs, but they also have behavior enhancements. Add the <code>on-hover</code> CSS class to them and they will pop open just on hovering the mouse over them.
+          </p>
+
+          <h3>Page-slide in-context help system</h3>
+          <p>
+            This theme integrates the <strong>jQuery PageSlide</strong> plugin, so you can just add CSS class <code>help-link</code> to any link that you want to open a contextual-help style slide in page.
+          </p>
+
+          <h3>Easy plotting with Flot</h3>
+          <p>
+            The theme integrates the jQuery <strong>Flot</strong> plugin, allowing easy graphing, even of real-time data. Checkout <a href="http://code.google.com/p/flot/">Flot's docs</a> to learn more about how to use thin wonderful tool.
+          </p>
+
+          <h3>Sortable tables</h3>
+          <p>
+            The <strong>Tablesorter</strong> jQuery plugin is also integrated in the theme, to allow better interaction with tabular data. It is also styled to mathch the overall look of the theme.
+          </p>
+
+        </div>
+
+      </div><!-- /.panel -->
+
+    </div><!-- /.span8 -->
+
+    <div class="span2"></div>
+
+  </div>
+  <!-- /#content.row-fluid: The Main Content Section -->
+
+</div><!-- /.container-fluid#container -->
+
+
+
+<!--============================= /Page Body ================================-->
+
+<!-- Javascript: placed at the end of the document to speed up page loading
+     (generally gives more consistent behavior than 'defer') -->
+
+  <!-- Scripts will most likely break in IE6 and below, so why bother loading them? -->
+  <!--[if lte IE 6]><noscript><![endif]-->
+
+  <!-- CMS/Framework scripts -->
+    <!-- ADD HERE -->
+  <!-- /CMS/Framework scripts -->
+
+  <!-- jQuery -->
+    <!-- 1: Grab Google CDN's jQuery, if the CMS/Framework hasn't loaded it -->
+    <script>window.jQuery || document.write('<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"><\/script>')</script>  
+    <!-- 2: ...fall back to local if offline -->
+    <script>window.jQuery || document.write('<script src="media/js/libs/jquery-1.8.3.min.js"><\/script>')</script>
+    <!-- 3: if jQuery was loaded in compatibility mode, where you have to use the
+            long 'jQuery(...)' instead of '$(...)' (Wordpress does this), revert
+            to to "classic" jQuery behavior -->
+    <script>if ($ === undefined) $ = jQuery</script>
+  <!-- /jQuery -->
+
+  <!-- Bootstrap Components -->
+  <script src="media/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- /Javascript -->
+
+</body>
+</html>

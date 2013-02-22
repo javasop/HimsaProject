@@ -1,0 +1,241 @@
+/* === MADMIN MENU ==={ */
+
+
+
+/* general setup & list styles reset */
+	.sidebar-menu li > a,
+	.sidebar-menu li > div > a {
+		position: relative;
+	}
+	.sidebar-menu,
+	.sidebar-menu ul,
+	.sidebar-menu li {
+		position: relative;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.sidebar-menu > li,
+	.sidebar-menu > li > div {
+		width: @sidebar_w;
+	}
+	.sidebar-menu li > a {
+		white-space: nowrap;
+	}
+	.sidebar-menu li > div > a > [class^="icon-"] + span {
+		position: relative;
+		top: -4px;
+	}
+	.sidebar-menu li > div > a > span {
+		position: relative;
+		top: 6px;
+	}
+
+
+/* drop sub-menu mix-in */
+	.sub-menu-drop (@top, @left) {
+		display: block;
+		position: absolute;
+		top: @top !important;
+		left: @left !important;
+		padding: 10px 0;
+		background: @color_sidebar_hover_bg;			
+		> li > a,
+		> li > div > a {
+			padding: 5px 16px;
+			height: 20px;
+			color: @color_sidebar_hover_fg;
+		}
+		> li:hover > a,
+		> li.active > a,
+		> li.active > a:hover {
+			padding-left: 8px !important;
+			border-left: 8px solid @color_sidebar_submenu_fx;
+		}
+		> li.active > a,
+		> li.active > div > a,
+		> li.active > a:hover,
+		> li.active > div > a:hover {
+			color: @color_sidebar_active_fg;
+			border-color: @color_sidebar_active_fg;
+		}
+	}
+
+
+/* main menu styles */
+	.sidebar-menu {
+	/* level 0 */
+		> li > div {
+			position: relative;
+			background: @color_sidebar_bg;
+			> a {
+				display: block;
+				height: 30px;
+				padding: 10px;
+				color: @color_sidebar_fg;
+			}
+			> a > [class^="icon-"] {
+				margin-right: 10px;
+				font-size: 28px;
+				line-height: 28px;
+				font-weight: normal;		
+			}
+			> a > [class^="icon-icomoon-"] {
+				position: relative;
+				top: 2px;
+				font-size: 26px;
+				line-height: 26px;
+			}
+		}
+		> li:hover > div > a,
+		> li.open > div > a {
+			background: @color_sidebar_hover_bg;
+		}
+		> li.parent > div > a > span:before {
+			.arrow-r(5px, @color_sidebar_fg, @color_sidebar_bg);
+			margin-right: 5px;
+		}
+		> li.parent:hover > div > a > span:before,
+		> li.parent.open > div > a > span:before {
+			.arrow-r(5px, @color_sidebar_hover_fg, @color_sidebar_hover_bg);
+		}
+		> li.active > div > a {
+			background: @color_bg;
+			color: @color_sidebar_active_fg;
+		}
+		> li.parent.active > div > a > span:before {
+			.arrow-b(5px, @color_sidebar_active_fg, @color_sidebar_active_bg);
+		}
+
+	/* levels 1+ */
+		ul {
+			display: none;
+		}
+		ul > li > a {
+			display: block;
+			height: 20px;
+			padding: 5px;
+		}
+
+		/* arrows */
+		> li.parent li.parent > a > span:after {
+			.arrow-r(5px, @color_sidebar_fg, @color_sidebar_hover_bg);
+			margin-left: 8px;
+		}
+	}
+
+	/* drop-right */
+	.sidebar-menu.on-hover > li.parent.inactive:hover > div > ul,
+	.sidebar-menu > li.parent.inactive.open > div > ul {
+		.sub-menu-drop(0, 100%);
+	}
+	.sidebar-menu > li.parent > div > ul li.open > ul,
+	.sidebar-menu > li.parent > div > ul li:hover > ul {
+		.sub-menu-drop(-10px, 100%);
+	}
+
+
+/* maximized sidebar - active's item submenu */
+.sidebar-max .sidebar-menu {
+	> li.active,
+	> li.active > div {
+		width: @sidebar_w + 1;
+	}
+	.active > div > ul {
+		display: block;
+		padding-bottom: 10px;
+		background: @color_bg;
+
+		> li > a {
+			margin-left: 72px;
+			color: @color_sidebar_bg;
+			border-color: @color_sidebar_bg;
+		}
+
+		> li > a:hover,
+		> li.active > a {
+			border-left: 8px solid;
+			padding-left: 7px;
+			margin-left: 62px;
+		}
+
+		> li.active > a {
+			color: @color_sidebar_active_fg;
+			border-color: @color_sidebar_active_fg;
+		}
+	}
+
+	/* level 1+ arrows */
+	> li.parent.active {
+		> div > ul > li.parent { // level 1
+			> a > span:after {
+				.arrow-r(5px, @color_sidebar_bg, @color_sidebar_fg);
+				top: 0px;
+				margin-left: 8px;
+			}
+			&.active > a > span:after {
+				.arrow-r(5px, @color_sidebar_active_fg, @color_sidebar_active_bg);
+				top: 0;
+				margin-left: 8px;
+			}
+		}
+		li.parent.active > a > span:after { // level > 1
+			.arrow-r(5px, @color_sidebar_active_fg, @color_sidebar_hover_bg);
+			margin-left: 8px;
+		}
+	}
+}
+
+
+/* minimized sidebar */
+.sidebar-min {
+	.sidebar-menu {
+		> li {
+			width: @sidebar_w_min;
+			overflow: hidden;
+		}
+		> li.active {
+			width: @sidebar_w_min + 1px;
+		}
+
+		/* levels 1+ arrows */
+		> li.parent.active li.parent > a > span:after {
+			.arrow-r(5px, @color_sidebar_hover_fg, @color_sidebar_hover_bg);
+			margin-left: 8px;
+		}
+		> li.parent.active li.parent.active > a > span:after {
+			.arrow-r(5px, @color_sidebar_active_fg, @color_sidebar_hover_bg);
+			margin-left: 8px;
+		}
+	}
+	.sidebar-menu > li.parent > div.sidebar-menu-item-wrapper > ul,
+	.sidebar-menu > li.parent.active > div.sidebar-menu-item-wrapper > ul,
+	.sidebar-menu.on-hover > li.parent.inactive:hover > div > ul {
+		.sub-menu-drop(50px, 60px);
+		min-width: 160px;
+		padding-top: 0 !important;
+	}
+
+	.sidebar-menu.on-hover > li:hover,
+	.sidebar-menu > li.open {
+		> div > a {
+			background: @color_sidebar_hover_bg;
+		}
+		overflow: visible;
+	}
+
+
+	.sidebar-menu.on-hover > li.parent.active:hover > div > a > span:before,
+	.sidebar-menu > li.parent.active.open > div > a > span:before {
+		.arrow-b(5px, @color_sidebar_active_fg, @color_sidebar_hover_bg);
+	}
+
+	.sidebar-menu.on-hover > li.parent:hover > div > a > span:before,
+	.sidebar-menu > li.parent.open > div > a > span:before {
+		.arrow-b(5px, @color_sidebar_fg, @color_sidebar_hover_bg);
+	}
+}
+
+
+
+/* }=== MADMIN MENU === */

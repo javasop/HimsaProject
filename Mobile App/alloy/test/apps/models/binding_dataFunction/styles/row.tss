@@ -1,0 +1,23 @@
+"#row": {
+	height: '60dp'
+}
+
+"#direction": {
+	left: '0dp',
+	height: '36dp',
+	touchEnabled: false
+}
+
+"#direction[platform=android,mobileweb]": {
+	left: '10dp'
+}
+
+"#name": {
+	color: '#fff',
+	right: '10dp',
+	font: {
+		fontSize: '16dp',
+		fontWeight: 'normal'
+	},
+	touchEnabled: false
+}

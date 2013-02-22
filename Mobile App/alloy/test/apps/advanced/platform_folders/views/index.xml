@@ -1,0 +1,8 @@
+<Alloy>
+	<Window layout="vertical">
+		<ImageView image="/appc1.png"/>
+		<ImageView image="/appc2.png"/>
+		<ImageView image="/appc3.png"/>
+		<ImageView image="/appc4.png"/>
+	</Window>
+</Alloy>
