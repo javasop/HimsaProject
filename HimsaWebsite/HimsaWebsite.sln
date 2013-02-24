@@ -5,6 +5,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HimsaWebsite", "HimsaWebsit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HimsaWebsite.Tests", "HimsaWebsite.Tests\HimsaWebsite.Tests.csproj", "{07E4CFDE-6F44-4330-B22A-B4529F8672B5}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Himsa_UI_AdminTheme", "..\Interface\Himsa_UI_AdminTheme\", "{3D4F2EF5-7F1C-447D-A8A6-2FC2EF24163D}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Himsa_UI_AdminTheme"
+		Debug.AspNetCompiler.PhysicalPath = "..\Interface\Himsa_UI_AdminTheme\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Himsa_UI_AdminTheme\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Himsa_UI_AdminTheme"
+		Release.AspNetCompiler.PhysicalPath = "..\Interface\Himsa_UI_AdminTheme\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Himsa_UI_AdminTheme\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57120"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +39,10 @@ Global
 		{07E4CFDE-6F44-4330-B22A-B4529F8672B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07E4CFDE-6F44-4330-B22A-B4529F8672B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07E4CFDE-6F44-4330-B22A-B4529F8672B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D4F2EF5-7F1C-447D-A8A6-2FC2EF24163D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4F2EF5-7F1C-447D-A8A6-2FC2EF24163D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D4F2EF5-7F1C-447D-A8A6-2FC2EF24163D}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D4F2EF5-7F1C-447D-A8A6-2FC2EF24163D}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
