@@ -1,4 +1,12 @@
 HimsaWebApp::Application.routes.draw do
+  get "home/show"
+
+  get "home/list"
+
+  get "home/add"
+
+  get "user/index"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
