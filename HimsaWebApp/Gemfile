@@ -1,13 +1,18 @@
 source 'https://rubygems.org'
 
+
+gem 'mongo'
+
 gem 'rails', '3.2.12'
+
+gem 'mongo_mapper'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'activerecord-jdbcmysql-adapter'
 
-gem 'jruby-openssl'
+gem 'jruby-openssl', :require => false
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -19,6 +24,8 @@ group :assets do
   gem 'therubyrhino'
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'less'
 end
 
 gem 'jquery-rails'

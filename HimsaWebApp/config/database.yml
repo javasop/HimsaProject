@@ -10,25 +10,26 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 development:
   adapter: mysql
-  database: himsa_db
   username: root
   password: root
   host: localhost
+  database: himsa_db
   port: 8889
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   adapter: mysql
-  database: HimsaWebApp_test
+  database: HimsaProject_test
   username: root
   password:
   host: localhost
 
 production:
   adapter: mysql
-  database: HimsaWebApp_production
+  database: HimsaProject_production
   username: root
   password:
   host: localhost

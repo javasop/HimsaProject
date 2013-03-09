@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-HimsaWebApp::Application.load_tasks
+HimsaProject::Application.load_tasks
