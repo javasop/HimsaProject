@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://app.divshot.com/js/jquery.min.js"></script>
+  <script src="https://app.divshot.com/js/bootstrap.min.js"></script>
+  <title>Himsa Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap.css">
+  <link rel="stylesheet" href="https://app.divshot.com/css/bootstrap-responsive.css">
+
+</head>
+<body>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div id="main-nav" class="container">
+      <a class="brand" href="#">Himsa Project</a>
+      <div class="navbar-content"></div>
+      <ul class="nav pull-right nav-tabs"></ul>
+      <div class="btn-group pull-right">
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#">First Link</a>
+          </li>
+          <li>
+            <a href="#">Second Link</a>
+          </li>
+          <li>
+            <a href="#">Third Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group pull-right" style="">
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#">First Link</a>
+          </li>
+          <li>
+            <a href="#">Second Link</a>
+          </li>
+          <li>
+            <a href="#">Third Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group pull-right">
+        <a class="btn" data-toggle="dropdown" href="#">Title Osama Alghanmi &nbsp; &nbsp; LVL 4</a>
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="#">My Profile</a>
+          </li>
+          <li>
+            <a href="#">Settings</a>
+          </li>
+          <li>
+            <a href="#">LeaderBoard</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+      <a class="btn pull-right btn-danger btn-mini">Badge1</a>
+      <a class="btn pull-right btn-warning btn-mini">Badge1</a>
+      <a class="btn pull-right btn-info btn-mini">Badge1</a>
+      <a class="btn pull-right btn-inverse btn-mini">Badge1</a>
+      <a class="btn pull-right btn-danger btn-mini">Badge1</a>
+      <a class="btn pull-right btn-primary btn-mini">Badge1</a>
+      <a class="btn pull-right btn-warning btn-mini">Badge1</a>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span3">
+      <ul class="nav  nav-pills nav-stacked">
+        <li class="active">
+          <a href="#">
+            <i class="icon-user">
+
+            </i>
+            Dashboard</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-list-alt "></i> LeaderBoard</a>
+        </li>
+        <li class="dropdown-submenu">
+          <a tabindex="-1" href="#"><i class="icon-cog "></i> Settings</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#"> Change Password</a>
+            </li>
+            <li>
+              <a href="#"> Change Avatar</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="icon-share "></i> Logout</a>
+        </li>
+      </ul>
+    </div>
+    <div class="span9"><%= yield %></div>
+  </div>
+</div>
+</body>
+
+</html>

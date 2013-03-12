@@ -1,0 +1,63 @@
+
+
+
+/** Avatar Styles **/
+
+#user-wrapper{
+    margin-top:25px;
+}
+#user-stat{
+    margin-top:15px;
+}
+#current-xp{
+    margin-top:10px;
+    margin-left:20px;
+    width: 650px;
+}
+#stat-table{
+    width:260px;
+    margin-left:10px;
+}
+#main-nav .btn{
+    margin-left:2px;
+
+}
+#parts{
+    margin-right: 0px;
+    margin-top: 10px;
+    width:100px;
+}
+#items-wrapper{
+    padding:0px;
+    margin-left:1px;
+    -moz-box-shadow: -1px -1px 6px #000000;
+    -webkit-box-shadow: -1px -1px 6px #000000;
+    box-shadow: -1px -1px 6px #000000;
+}
+#items{
+    padding-left:15px;
+    padding-bottom:10px;
+    padding-top:10px;
+    padding-right:0px;
+}
+#items img{
+    margin-top:2px;
+    width:60px;
+    height:60px;
+}
+#avatar{
+    margin-left:1px;
+    -moz-box-shadow: -1px 1px 8px #000000;
+    -webkit-box-shadow: -1px 1px 8px #000000;
+    box-shadow: -1px 1px 8px #000000;
+}
+#avatar img{
+    width:400px;
+    height:500px;
+}
+#avatar-canvas{
+
+}
+#avatar-button-group{
+
+}

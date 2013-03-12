@@ -1,0 +1,25 @@
+#user-wrapper{
+    margin-top:25px;
+}
+#user-stat{
+    margin-top:15px;
+}
+#current-xp{
+    margin-top:10px;
+    margin-left:20px;
+    width: 650px;
+}
+#stat-table{
+    width:200px;
+    margin-left:0px;
+}
+#main-nav .btn{
+    margin-left:2px;
+
+}
+#result-filter{
+
+}
+#result-filter div{
+    margin-bottom:10px;
+}
