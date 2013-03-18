@@ -47,9 +47,10 @@
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.4.4, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v1.21, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mongo (v1.8.3, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mongo_mapper (v0.12.0, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mongoid (v3.1.2, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="moped (v1.4.3, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.6.1, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="plucky (v0.5.2, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="origin (v1.0.11, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="polyglot (v0.3.3, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.4.5, RVM: jruby-1.7.3 [global]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-cache (v1.2, RVM: jruby-1.7.3 [global]) [gem]" level="application" />

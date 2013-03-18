@@ -27,26 +27,98 @@
           </div>
           <div id="items-wrapper" class="span5">
             <div id="items">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
-              <img src="http://placehold.it/100x100">
+
+
+              <!-- wrap the parent around its children , then call the same method again  -->
+
+              <!-- male or female , main body parts , eyes and shoes and helmets and jewlary and clothes  , sunglasses -->
+
+              <!-- everytime a user clicks a variance we look at parent part's variance for positioning we then add the avatar_id to this variance using avatar_variances array , when the user saves the avatar we only send the avatar's variance -->
+
+              <!-- starting from level 1   -->
+
+             <!-- for loop on the top element -->
+
+              <!-- div  -->
+                 <!-- the top element   -->
+                       <!-- and the children parts  -->
+
+                         <!-- /div  -->
+              <!-- /div -->
+              <!-- end  -->
+
+
+              <% def output (part)
+
+
+
+
+
+
+
+                   if part.child_parts.nil?
+
+
+                    return
+
+
+
+
+                 #if the user id array is not empty the user must be eligible
+                   elsif   part.user_ids.include?(-1) or part.user_ids.include?@user_id %>
+
+                      <span data-part-name=<%= part.name %> data-part-position=<%= part.position %>   id= <%= part.id %>  >
+
+                      <% part.variances.each do |variance| %>
+
+                            <!-- check if the user is eligible for this variance -->
+
+                            <% if variance.user_ids.include?@user_id or variance.user_ids.include?(-1) %>
+
+                          <img alt="variance_image" src=<%= variance.res %>  id= <%= variance.id %>>
+
+                            <% end %>
+
+
+                      <% end %>
+
+
+
+
+                        <% part.child_parts.each do |child| %>
+
+                            <span data-child-part-name= <% child.name %> >
+
+                                 <% output child %>
+
+
+                             </span>   <!-- end child part -->
+                          <% end %>
+
+
+
+                      </span> <!-- end parent part -->
+
+
+
+
+                  <% end %>
+
+
+              <% end %>
+
+
+              <% @part = @library.parts.last %>
+
+              <% output @part %>
+
+
+
+
+
+
+
+
             </div>
           </div>
           <div id="avatar" class="span5">
