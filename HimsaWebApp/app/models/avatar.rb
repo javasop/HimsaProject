@@ -6,10 +6,10 @@ class Avatar
 
 
   #relationship
-  has_and_belongs_to_many :variances
+  has_many :variances
 
   #relationship
-  has_and_belongs_to_many :parts
+  has_many :parts
 
 
 

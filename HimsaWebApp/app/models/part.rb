@@ -45,9 +45,9 @@ class Part
 
 
 
-  has_and_belongs_to_many :child_parts  , class_name: 'Part' , inverse_of: :parent_part
+  has_many :child_parts  , class_name: 'Part' , inverse_of: :parent_part
 
-  has_and_belongs_to_many :parent_part , class_name: 'Part' , inverse_of: :child_part
+  belongs_to :parent_part , class_name: 'Part' , inverse_of: :child_parts
 
 
 

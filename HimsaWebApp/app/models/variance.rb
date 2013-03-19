@@ -31,7 +31,7 @@ class Variance
   belongs_to :part
 
 
-  has_and_belongs_to_many :avatar
+  belongs_to :avatar
 
 
 

@@ -48,18 +48,12 @@
               <!-- end  -->
 
 
-              <% @temp = Array.new %>
-
-
 
 
               <% def output (part)
 
 
-                   if part.child_parts.nil? or @temp.include?part
-
-
-
+                   if part.child_parts.nil?
 
 
 
@@ -67,16 +61,8 @@
 
 
 
-
-                 #if the user id array is not empty the user must be eligible
-                 #try to eliminate duplication by adding a global array
-                 #check if the child part is your sibiling
-
                    elsif   part.user_ids.include?(-1) or part.user_ids.include?@user_id %>
 
-                    <%  #push the parent to check later for duplication in case of lock
-                      #meaning that part is a child in one structure and a parent in another
-                      @temp.push part  %>
 
                       <span data-part-name=<%= part.name %> data-part-position=<%= part.position %>   id= <%= part.id %>  >
 
@@ -99,25 +85,13 @@
 
                         <% part.child_parts.each do |child| %>
 
-                  <% #if the child share a parent with the parent then don't output the child   %>
 
-
-
-                  <% #except the id of the root document , get the list of all root documents and add them here %>
-                  <% intersect =  child.parent_part_ids & part.parent_part_ids %>
-
-                            <% if intersect.nil? or part.name.eql?'avatar' %>
                             <span data-child-part-name= <% child.name %> >
 
                                  <% output child %>
 
                              </span>   <!-- end child part -->
 
-                                <% else %>
-
-                                  <%= intersect %>
-
-                              <% end %>
 
 
                           <% end %>

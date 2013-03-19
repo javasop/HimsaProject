@@ -30,6 +30,19 @@ class LibraryController < ApplicationController
     part6 = Part.new(:name => 'right_leg' ,:level => 2 , :user_ids => [-1] )
 
 
+    @alt_part1 = Part.new(:name => 'head' ,:level => 2 , :user_ids => [-1]  )
+
+    alt_part2 = Part.new(:name => 'body' ,:level => 2 , :user_ids => [-1] )
+
+    alt_part3 = Part.new(:name => 'left_arm' ,:level => 2 , :user_ids => [-1] )
+
+    alt_part4 = Part.new(:name => 'right_arm' ,:level => 2 , :user_ids => [-1] )
+
+    alt_part5 = Part.new(:name => 'left_leg' ,:level => 2 , :user_ids => [-1] )
+
+    alt_part6 = Part.new(:name => 'right_leg' ,:level => 2 , :user_ids => [-1] )
+
+
 
 
 
@@ -101,14 +114,14 @@ class LibraryController < ApplicationController
 
 
     #add the body to the root of everything
-    alt_part.child_parts.push(part2)
+    alt_part.child_parts.push(alt_part2)
 
     #add the rest of the parts to the body
-    part2.child_parts.push(@part1)
-    part2.child_parts.push(part3)
-    part2.child_parts.push(part4)
-    part2.child_parts.push(part5)
-    part2.child_parts.push(part6)
+    alt_part2.child_parts.push(@alt_part1)
+    alt_part2.child_parts.push(alt_part3)
+    alt_part2.child_parts.push(alt_part4)
+    alt_part2.child_parts.push(alt_part5)
+    alt_part2.child_parts.push(alt_part6)
 
 
 
@@ -120,8 +133,10 @@ class LibraryController < ApplicationController
 
 
 
+    #push the library part to the root
     @library.parts.push(part)
 
+    #push the avatar part to the root
     @library.parts.push(alt_part)
 
 
