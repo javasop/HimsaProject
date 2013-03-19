@@ -1,0 +1,83 @@
+
+  <div id="current-xp" class="progress active progress-striped progress-info">
+    <div class="bar" style="width: 100px;"></div>1000 XP TO LVL 5</div>
+  <div id="user-wrapper" class="container-fluid">
+    <div id="user" class="row-fluid">
+      <div id="canvas-wrapper" class="span5">
+        <img height="600" width="500" src="http://placehold.it/100x100" alt="This is the avatar">
+      </div>
+      <div id="user-tasks" class="span7">
+        <div id="result-filter">
+          <span class="label label-important">Show:</span>
+          <div class="btn-group">
+            <a class="btn">ALL</a>
+            <a class="btn">NEW</a>
+            <a class="btn">OLD</a>
+          </div>
+        </div>
+        <div class="accordion" id="accordion2">
+          <% @tasks.each do |task| %>
+
+
+
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2"
+                     href="#collapseOne">
+                  <%= task.name %>
+                    <span class="badge pull-right badge-info"><%= task.xp  %></span>
+                    <span class="badge pull-right badge-important"><%= task.task_type  %></span>
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                  <div class="accordion-inner"> <%= task.description %>
+                    <a href="#">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <table id="stat-table" class="table">
+    <thead>
+    <tr>
+      <th>Strength:12</th>
+      <th>Stamina:3</th>
+    </tr>
+    <tr>
+      <th>Intelect:3</th>
+      <th>Magic:6</th>
+    </tr>
+    </thead>
+  </table>
+
+
+  <div class="login">
+    <%= form_tag(:action => 'index') do %>
+        <table>
+          <tr>
+            <td><%= label_tag(:username) %></td>
+            <td><%= text_field_tag(:username) %></td>
+          </tr>
+          <tr>
+            <td><%= label_tag(:password) %></td>
+            <td><%= password_field_tag(:password) %></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><%= submit_tag("Log In") %></td>
+          </tr>
+        </table>
+    <% end %>
+    </div>
+
+
+  <%= @outp %>

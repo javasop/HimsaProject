@@ -1,4 +1,6 @@
 HimsaProject::Application.routes.draw do
+  get "task/index"
+
   get "team_library/add"
 
   get "team_library/show"
