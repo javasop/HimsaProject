@@ -1,0 +1,20 @@
+<h1><%= @library2.parts.to_json()%></h1>
+
+
+<h2><%= @part1.child_parts.to_json() %></h2>
+
+
+<script type="text/javascript" charset="utf-8">
+
+  <% @part1.child_parts.each do |p|
+
+   %>
+
+    var yo = <%= p.class %>;
+
+
+
+
+  <% end%>
+
+</script>
