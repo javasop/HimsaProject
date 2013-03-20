@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74818ebc-ea92-4ffd-98fb-dc11292d8634" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/HimsaWebApp.iml" afterPath="$PROJECT_DIR$/.idea/HimsaWebApp.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/avatar.rb" afterPath="$PROJECT_DIR$/app/models/avatar.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/avatar/index.html.erb" afterPath="$PROJECT_DIR$/app/views/avatar/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/library_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/library_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/part.rb" afterPath="$PROJECT_DIR$/app/models/part.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/variance.rb" afterPath="$PROJECT_DIR$/app/models/variance.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="HimsaWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,6 +43,7 @@
     <file path="/position.rb" changelist="74818ebc-ea92-4ffd-98fb-dc11292d8634" time="1363536087792" ignored="false" />
     <file path="/task.rb" changelist="74818ebc-ea92-4ffd-98fb-dc11292d8634" time="1363563393595" ignored="false" />
     <file path="/task_controller.rb" changelist="74818ebc-ea92-4ffd-98fb-dc11292d8634" time="1363706247387" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="74818ebc-ea92-4ffd-98fb-dc11292d8634" time="1363716275215" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,19 +60,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/avatar/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="36" selection-start="2725" selection-end="2725" vertical-scroll-proportion="2.4429967">
+            <state line="114" column="14" selection-start="2925" selection-end="2925" vertical-scroll-proportion="-71.25">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="part.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="part.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/part.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="73" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0">
+            <state line="49" column="73" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.79262674">
               <folding />
             </state>
           </provider>
@@ -793,7 +788,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1280" height="774" extended-state="7" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32547864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -956,13 +951,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/library.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/library_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="135" column="0" selection-start="3465" selection-end="3465" vertical-scroll-proportion="0.0">
@@ -970,16 +958,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/part.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/avatar/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="73" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.0">
+        <state line="114" column="14" selection-start="2925" selection-end="2925" vertical-scroll-proportion="-71.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/avatar/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/models/library.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="36" selection-start="2725" selection-end="2725" vertical-scroll-proportion="2.4429967">
+        <state line="8" column="1" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/part.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="73" selection-start="1180" selection-end="1180" vertical-scroll-proportion="0.79262674">
           <folding />
         </state>
       </provider>
