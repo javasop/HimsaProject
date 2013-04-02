@@ -8,9 +8,6 @@ class Avatar
   #relationship
   has_many :variances
 
-  #relationship
-  has_many :parts
-
 
 
 

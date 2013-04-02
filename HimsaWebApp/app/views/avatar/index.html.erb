@@ -1,4 +1,4 @@
- <div class="container-fluid">
+ <div onload="init()" class="container-fluid">
         <div class="row-fluid">
           <div id="parts" class="span2">
             <ul id="parts-menu" class="nav nav-tabs nav-stacked">
@@ -72,7 +72,7 @@
 
                             <% if variance.user_ids.include?@user_id or variance.user_ids.include?(-1) %>
 
-                          <img alt="variance_image" src=<%= variance.res %>  id= <%= variance.id %>>
+                          <a href="#" data-part-id =<%= part.id %>  id= <%= variance.id %> data-part-name=<%= part.name %> > <img  id=<%=part.name%> src=<%= variance.res %>  /> </a>
 
                             <% end %>
 
@@ -86,12 +86,7 @@
                         <% part.child_parts.each do |child| %>
 
 
-                            <span data-child-part-name= <% child.name %> >
-
                                  <% output child %>
-
-                             </span>   <!-- end child part -->
-
 
 
                           <% end %>
@@ -109,7 +104,7 @@
               <% end %>
 
 
-              <% @part = @library.parts.select{|part| part.name.eql?'avatar'} %>
+              <% @part = @library.parts.select{|part| part.name.eql?'library'} %>
 
               <% output @part.first %>
 
@@ -122,9 +117,108 @@
               <a class="btn btn-warning"><i class="icon-retweet "></i> Start Over</a>
               <a class="btn btn-info"><i class="icon-file "></i> Save</a>
             </div>
-            <canvas width="400" height="400" id="avatar-canvas"></canvas>
+            <canvas width="320" height="400" id="avatarCanvas"></canvas>
           </div>
 
         </div>
       </div>
+
+
+
+
+
+
+
+ <!-- this is for the structure of the avatar -->
+
+
+
+ <div id="hiddenAvatar" class="hidden">
+
+
+
+   <!-- wrap the parent around its children , then call the same method again  -->
+
+   <!-- male or female , main body parts , eyes and shoes and helmets and jewlary and clothes  , sunglasses -->
+
+   <!-- everytime a user clicks a variance we look at parent part's variance for positioning we then add the avatar_id to this variance using avatar_variances array , when the user saves the avatar we only send the avatar's variance -->
+
+   <!-- starting from level 1   -->
+
+   <!-- for loop on the top element -->
+
+   <!-- div  -->
+   <!-- the top element   -->
+   <!-- and the children parts  -->
+
+   <!-- /div  -->
+   <!-- /div -->
+   <!-- end  -->
+
+
+
+
+   <% def output (part)
+
+
+        if part.relative_children.nil?
+
+
+
+          return
+
+
+
+        elsif   part.user_ids.include?(-1) or part.user_ids.include?@user_id %>
+
+
+                      <span data-part-name=<%= part.name %>  data-part-position=<%=part.position %> data-part-offset=<%= part.offset %>  id= <%= part.id %>  >
+
+
+                        <% part.relative_children.each do |child| %>
+
+
+
+
+                                 <% output child %>
+
+
+
+
+                          <% end %>
+
+
+
+                      </span> <!-- end parent part -->
+
+
+
+
+       <% end %>
+
+
+   <% end %>
+
+
+   <% @part = @library.parts.select{|part| part.name.eql?'library'} %>
+
+   <% output @part.first %>
+
+
+
+
+ </div>
+
+
+
+
+ <script charset="utf-8" type="text/javascript">
+
+       //this will initialize a variable that will serve as the list of variances
+       var variances = <%= raw @avatar_variances.to_json.gsub("</", "<\\/") %>;
+
+         init();
+
+
+ </script>
 

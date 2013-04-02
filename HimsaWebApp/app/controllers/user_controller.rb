@@ -11,6 +11,16 @@ class UserController < ApplicationController
 
           @positioning = hobby.parent.to_json
 
+
+          task = Task.new(:name => 'hello')
+
+          @skill = Skill.new(:description => 'say what')
+
+          @skill.tasks.push(task)
+
+
+
+
        render('user')
      end
 

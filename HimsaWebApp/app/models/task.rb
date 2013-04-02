@@ -1,7 +1,14 @@
-class Task < ActiveRecord::Base
+class Task
+  include Mongoid::Document
 
-  attr_accessible :name , :task_type
+ field  :name  , type: String
 
-  set_table_name :task
+
+
+  field :task_type , type: String
+
+
+
+  belongs_to :skill
 
 end

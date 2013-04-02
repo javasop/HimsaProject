@@ -10,37 +10,26 @@ class LibraryController < ApplicationController
 
     @library2 = Library.new(:team_id => 2 , :user_ids => [-1] )
 
-    part =  Part.new(:name => 'library' ,:level => 1  , :user_ids => [-1] , :parent_part_ids => [11,22] )
-
-    #this is the avatar structure
-    alt_part = Part.new(:name => 'avatar' , :level => 1 , :user_ids => [-1] , :parent_part_ids => [11,22] )
+    part =  Part.new(:name => 'library' ,:level => 1  , :user_ids => [-1]   )
 
 
+    #every part that's duplicated will share an ID different from the object ID
+    #I can creat a class called generic_part and add an ID to it all other parts are from it
+    #and share the parent ID
+    @part1 = Part.new(:name => 'head' ,:level => 2 , :position => 'top' )
 
-    @part1 = Part.new(:name => 'head' ,:level => 2 , :user_ids => [-1]  )
+    part2 = Part.new(:name => 'body' ,:level => 2   )
 
-    part2 = Part.new(:name => 'body' ,:level => 2 , :user_ids => [-1] )
+    part3 = Part.new(:name => 'left_arm' ,:level => 2  ,  :position => 'top-left' )
 
-    part3 = Part.new(:name => 'left_arm' ,:level => 2 , :user_ids => [-1] )
+    part4 = Part.new(:name => 'right_arm' ,:level => 2 , :position => 'top-right' )
 
-    part4 = Part.new(:name => 'right_arm' ,:level => 2 , :user_ids => [-1] )
+    part5 = Part.new(:name => 'left_leg' ,:level => 2  ,  :position => 'bottom-left' )
 
-    part5 = Part.new(:name => 'left_leg' ,:level => 2 , :user_ids => [-1] )
-
-    part6 = Part.new(:name => 'right_leg' ,:level => 2 , :user_ids => [-1] )
+    part6 = Part.new(:name => 'right_leg' ,:level => 2 ,  :position => 'bottom-right' )
 
 
-    @alt_part1 = Part.new(:name => 'head' ,:level => 2 , :user_ids => [-1]  )
 
-    alt_part2 = Part.new(:name => 'body' ,:level => 2 , :user_ids => [-1] )
-
-    alt_part3 = Part.new(:name => 'left_arm' ,:level => 2 , :user_ids => [-1] )
-
-    alt_part4 = Part.new(:name => 'right_arm' ,:level => 2 , :user_ids => [-1] )
-
-    alt_part5 = Part.new(:name => 'left_leg' ,:level => 2 , :user_ids => [-1] )
-
-    alt_part6 = Part.new(:name => 'right_leg' ,:level => 2 , :user_ids => [-1] )
 
 
 
@@ -49,7 +38,7 @@ class LibraryController < ApplicationController
     #save part first to automatically save children
     part.save!
 
-    alt_part.save!
+
 
 
 
@@ -71,26 +60,32 @@ class LibraryController < ApplicationController
 
 
 
-    child_part =  Part.new(:name => 'eye' ,  :parent_name => 'head' , :level => 3  , :user_ids => [-1]   )
 
 
-    #pushing second level children
-    @part1.child_parts.push(child_part)
 
 
-    variance1 = Variance.new(:res => 'bear_head.png' , :user_ids => [-1] )
 
-    variance2 = Variance.new(:res => 'body.png' , :user_ids => [-1] )
 
-    variance3 = Variance.new(:res => 'left_Hand.png' , :user_ids => [-1] )
 
-    variance4 = Variance.new(:res => 'right_Hand.png' , :user_ids => [-1] )
 
-    variance5 = Variance.new(:res => 'right_left_leg.png' , :user_ids => [-1]  )
 
-    variance6 = Variance.new(:res => 'wicked_body.png' , :user_ids => [-1] )
 
-    child_variance = Variance.new(:res => 'EyesPurple.png',  :position => 'center' , :user_ids => [-1]  )
+
+    variance1 = Variance.new(:res => 'bear_head.png' )
+
+    variance2 = Variance.new(:res => 'body.png' )
+
+    variance3 = Variance.new(:res => 'left_Hand.png' )
+
+    variance4 = Variance.new(:res => 'right_Hand.png' )
+
+    variance5 = Variance.new(:res => 'right_left_leg.png' )
+
+    #variance5 = Variance.new(:res => 'right_left_leg.png' )
+
+    variance6 = Variance.new(:res => 'wicked_body.png'  )
+
+   variance7 = Variance.new(:res => 'EyesPurple.png' , :size => 0.5 )
 
 
 
@@ -98,6 +93,7 @@ class LibraryController < ApplicationController
 
     #pushing variances
     @part1.variances.push(variance1)
+    @part1.variances.push(variance7)
     part2.variances.push(variance2)
     part2.variances.push(variance6)
     part3.variances.push(variance3)
@@ -108,20 +104,22 @@ class LibraryController < ApplicationController
 
 
 
-    #pushing variance for child part
-    child_part.variances.push(child_variance)
+
+
 
 
 
     #add the body to the root of everything
-    alt_part.child_parts.push(alt_part2)
+    part.relative_children.push(part2)
 
     #add the rest of the parts to the body
-    alt_part2.child_parts.push(@alt_part1)
-    alt_part2.child_parts.push(alt_part3)
-    alt_part2.child_parts.push(alt_part4)
-    alt_part2.child_parts.push(alt_part5)
-    alt_part2.child_parts.push(alt_part6)
+    part2.relative_children.push(part3)
+    part2.relative_children.push(@part1)
+    part2.relative_children.push(part4)
+    part2.relative_children.push(part5)
+    part2.relative_children.push(part6)
+
+
 
 
 
@@ -136,8 +134,6 @@ class LibraryController < ApplicationController
     #push the library part to the root
     @library.parts.push(part)
 
-    #push the avatar part to the root
-    @library.parts.push(alt_part)
 
 
 
