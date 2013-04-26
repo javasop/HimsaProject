@@ -5,7 +5,7 @@ class Concept
   #this holds the tree of knowledge
   has_many :child_concepts  , class_name: 'Concept' , inverse_of: :parent_concepts
 
-  belongs_to :parent_concepts , class_name: 'Concept' , inverse_of: :child_concepts
+  belongs_to :parent_concept , class_name: 'Concept' , inverse_of: :child_concepts
 
 
 
